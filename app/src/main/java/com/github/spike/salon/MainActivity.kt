@@ -175,8 +175,13 @@ fun LoyaltyProgram() {
             val canvasWidth = size.width
             val canvasHeight = size.height
             drawCircle(
-                color = Color.Blue,
-                center = Offset(x = canvasWidth - 50, y = canvasHeight -50),
+                color = Color.DarkGray,
+                center = Offset(x = canvasWidth - 120, y = canvasHeight -18),
+                radius = size.minDimension / 6 + 2
+            )
+            drawCircle(
+                color = Color.White,
+                center = Offset(x = canvasWidth - 120, y = canvasHeight -18),
                 radius = size.minDimension / 6
             )
         }
