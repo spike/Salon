@@ -27,8 +27,8 @@ import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.text.font.FontWeight
+import com.github.spike.salon.banner.Banner
 
 import com.github.spike.salon.ui.theme.SalonTheme
 
@@ -54,7 +54,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Content() {
     Column {
-        LoyaltyProgram()
+        Banner()
         Row(
             modifier = Modifier.padding(
                 start=24.dp,
@@ -147,46 +147,6 @@ fun RowItem(number: Int) {
     }
 }
 
-@Composable
-fun LoyaltyProgram() {
-    Card(
-        modifier = Modifier
-            .padding(
-                start = 32.dp,
-                end = 24.dp,
-                top = 24.dp,
-                bottom = 24.dp
-            )
-            .width(IntrinsicSize.Max),
-        elevation = 2.dp,
-        shape = RoundedCornerShape(16.dp)
-    ) {
-        Text(
-            text = "Accumulate 20 points and get a free visit.",
-            modifier = Modifier.padding(
-                start = 32.dp,
-                end = 32.dp,
-                top = 24.dp,
-                bottom = 24.dp
-            ),
-            style = MaterialTheme.typography.h6
-        )
-        Canvas(modifier = Modifier.fillMaxSize(.1f)) {
-            val canvasWidth = size.width
-            val canvasHeight = size.height
-            drawCircle(
-                color = Color.DarkGray,
-                center = Offset(x = canvasWidth - 120, y = canvasHeight -18),
-                radius = size.minDimension / 6 + 2
-            )
-            drawCircle(
-                color = Color.White,
-                center = Offset(x = canvasWidth - 120, y = canvasHeight -18),
-                radius = size.minDimension / 6
-            )
-        }
-    }
-}
 
 @ExperimentalFoundationApi
 @Preview(showBackground = true)
@@ -384,7 +344,7 @@ fun ScaffoldLayout() {
                 elevation = 0.dp
             )
         }, */
-        content = {
+        content = { padding ->
             Content()
         },
         bottomBar = {
