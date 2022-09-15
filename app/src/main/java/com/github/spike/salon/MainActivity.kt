@@ -29,7 +29,9 @@ import androidx.compose.material.Text
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import com.github.spike.salon.banner.Banner
+import com.github.spike.salon.bottomnavigation.BottomNavigationBar
 import com.github.spike.salon.salonservices.Cell
+import com.github.spike.salon.salonservices.ServicesSection
 
 import com.github.spike.salon.ui.theme.SalonTheme
 
@@ -165,6 +167,7 @@ fun HomeScreen() {
         modifier = Modifier
             .fillMaxHeight()
             .fillMaxWidth()
+            .padding(bottom=20.dp)
     ) {
         Column {
             ServicesSection(
@@ -190,7 +193,7 @@ fun HomeScreen() {
                         R.drawable.ic_drop_in
                     ),
                     ServiceAvailable (
-                        label = "Book an Appointment",
+                        label = "Book a Spot",
                         R.drawable.ic_drop_in
                     )
                 )
@@ -198,72 +201,7 @@ fun HomeScreen() {
         }
     }
 }
-@ExperimentalFoundationApi
-@Composable
-fun ServicesSection(servicesList: List<ServiceAvailable>) {
-    LazyVerticalGrid(
-        cells = GridCells.Adaptive(150.dp),
-       // cells = GridCells.Fixed(2),
-        contentPadding = PaddingValues (
-            start = 7.5.dp,
-            end = 7.5.dp,
-        ),
-    ) {
-        items(servicesList.size) {
-            Cell(serviceListed = servicesList[it])
-        }
-    }
-}
 
-@Composable
-fun TopBar() {
-    TopAppBar(
-        title = {
-            Text(
-                text = stringResource(R.string.app_name),
-                fontSize = 18.sp
-            )
-        },
-        backgroundColor = colorResource(
-            id = R.color.white
-        ),
-        contentColor = Color.White
-    )
-}
-
-@Composable
-fun BottomNavigationBar() {
-    val items = listOf(
-        NavigationItem.Home,
-        NavigationItem.Bookmarks,
-        NavigationItem.Profile
-    )
-    BottomNavigation(
-        backgroundColor = colorResource(
-            id = R.color.black
-        ),
-        contentColor = Color.White,
-    ) {
-        items.forEach { item ->
-            BottomNavigationItem(
-                icon = {
-                    Icon(
-                        painterResource(id = item.icon),
-                        contentDescription = item.title
-                    )
-                },
-                label = { Text(text = item.title) },
-                selectedContentColor = Color.White,
-                unselectedContentColor = Color.White.copy(0.4f),
-                alwaysShowLabel = false,
-                selected = false,
-                onClick = {
-
-                }
-            )
-        }
-    }
-}
 
 @ExperimentalFoundationApi
 @Composable
