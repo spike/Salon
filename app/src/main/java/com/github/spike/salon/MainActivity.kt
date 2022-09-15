@@ -170,19 +170,27 @@ fun HomeScreen() {
             ServicesSection(
                 servicesList = listOf(
                     ServiceAvailable (
-                        label = "Classic shaving",
+                        label = "Check-in",
                         R.drawable.ic_drop_in
                     ),
                     ServiceAvailable (
-                        label = "Hair care",
+                        label = "Haircut",
                         R.drawable.ic_appointment
                     ),
                     ServiceAvailable (
-                        label = "Beard trimming",
+                        label = "Haircut + Shampoo",
                         R.drawable.ic_drop_in
                     ),
                     ServiceAvailable (
-                        label = "Classic haircut",
+                        label = "Haircut Jr.",
+                        R.drawable.ic_drop_in
+                    ),
+                    ServiceAvailable (
+                        label = "Coloring",
+                        R.drawable.ic_drop_in
+                    ),
+                    ServiceAvailable (
+                        label = "Book an Appointment",
                         R.drawable.ic_drop_in
                     )
                 )
@@ -194,13 +202,14 @@ fun HomeScreen() {
 @Composable
 fun ServicesSection(servicesList: List<ServiceAvailable>) {
     LazyVerticalGrid(
-        cells = GridCells.Fixed(2),
+        cells = GridCells.Adaptive(150.dp),
+       // cells = GridCells.Fixed(2),
         contentPadding = PaddingValues (
             start = 7.5.dp,
             end = 7.5.dp,
         ),
     ) {
-        items(4) {
+        items(servicesList.size) {
             Cell(serviceListed = servicesList[it])
         }
     }
