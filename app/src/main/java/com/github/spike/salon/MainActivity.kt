@@ -29,6 +29,7 @@ import androidx.compose.material.Text
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import com.github.spike.salon.banner.Banner
+import com.github.spike.salon.salonservices.Cell
 
 import com.github.spike.salon.ui.theme.SalonTheme
 
@@ -169,32 +170,20 @@ fun HomeScreen() {
             ServicesSection(
                 servicesList = listOf(
                     ServiceAvailable (
-                        title = "Drop in",
-                        R.drawable.ic_drop_in,
-                        Color(R.color.white),
-                        Color(R.color.white),
-                        Color(R.color.white),
+                        label = "Classic shaving",
+                        R.drawable.ic_drop_in
                     ),
                     ServiceAvailable (
-                        title = "Book",
-                        R.drawable.ic_appointment,
-                        Color(R.color.white),
-                        Color(R.color.white),
-                        Color(R.color.white),
+                        label = "Hair care",
+                        R.drawable.ic_appointment
                     ),
                     ServiceAvailable (
-                        title = "Haircut",
-                        R.drawable.ic_drop_in,
-                        Color(R.color.white),
-                        Color(R.color.white),
-                        Color(R.color.white),
+                        label = "Beard trimming",
+                        R.drawable.ic_drop_in
                     ),
                     ServiceAvailable (
-                        title = "Shampoo",
-                        R.drawable.ic_drop_in,
-                        Color(R.color.white),
-                        Color(R.color.white),
-                        Color(R.color.white),
+                        label = "Classic haircut",
+                        R.drawable.ic_drop_in
                     )
                 )
             )
@@ -212,65 +201,7 @@ fun ServicesSection(servicesList: List<ServiceAvailable>) {
         ),
     ) {
         items(4) {
-            ServicesItem(serviceListed = servicesList[it])
-        }
-    }
-}
-
-@Composable
-fun ServicesItem(
-    serviceListed: ServiceAvailable
-) {
-    BoxWithConstraints(
-        modifier = Modifier
-            .background(Color(R.color.white))
-            .padding(7.5.dp)
-            .aspectRatio(1.2f)
-            .clip(RoundedCornerShape(20.dp))
-            .background(Color(R.color.white))
-            .padding(30.dp)
-            .clip(CircleShape)
-            .background(Color(R.color.white))
-            .clickable {
-
-            }
-    ) {
-        Box(
-            modifier = Modifier
-                .padding(15.dp)
-                .matchParentSize()
-               // .fillMaxHeight(.8f)
-              //  .fillMaxWidth()
-
-        ) {
-            Icon(
-                painter = painterResource(
-                    id = serviceListed.iconId
-                ),
-                contentDescription = serviceListed.title,
-                tint = Color.White,
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .clip(CircleShape)
-                    .padding(
-                        vertical = 6.dp,
-                        horizontal = 15.dp
-                    )
-            )
-            Text(
-                text = "Haircut",
-                color = Color(R.color.white),
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp,
-                modifier = Modifier
-                    .align(
-                        Alignment.BottomCenter
-                    )
-                    .padding(
-                        vertical = 6.dp,
-                        horizontal = 15.dp
-                    )
-            )
+            Cell(serviceListed = servicesList[it])
         }
     }
 }
@@ -318,7 +249,7 @@ fun BottomNavigationBar() {
                 alwaysShowLabel = false,
                 selected = false,
                 onClick = {
-                    /* Add code later */
+
                 }
             )
         }
@@ -331,19 +262,6 @@ fun ScaffoldLayout() {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
     Scaffold(
         scaffoldState = scaffoldState,
-     /*   topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        "",
-                        // style = MaterialTheme.typography.h5,
-                        color = Color.Black,
-                    )
-                },
-                backgroundColor = Color.White,
-                elevation = 0.dp
-            )
-        }, */
         content = { padding ->
             Content()
         },

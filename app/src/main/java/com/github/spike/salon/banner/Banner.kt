@@ -1,19 +1,20 @@
 package com.github.spike.salon.banner
 
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.IntrinsicSize
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.github.spike.salon.R
+import com.github.spike.salon.ui.theme.SalonTheme
+
 
 @Composable
 fun Banner() {
@@ -27,7 +28,9 @@ fun Banner() {
             )
             .width(IntrinsicSize.Max),
         elevation = 2.dp,
-        shape = RoundedCornerShape(16.dp)
+        shape = RoundedCornerShape(16.dp),
+        backgroundColor = Color(0xFFCBF5D7)
+
     ) {
         Text(
             text = "Accumulate 20 points and get a free visit.",
@@ -45,13 +48,24 @@ fun Banner() {
             drawCircle(
                 color = Color.DarkGray,
                 center = Offset(x = canvasWidth - 120, y = canvasHeight -18),
-                radius = size.minDimension / 6 + 2
+                radius = size.minDimension / 6
             )
             drawCircle(
                 color = Color.White,
                 center = Offset(x = canvasWidth - 120, y = canvasHeight -18),
                 radius = size.minDimension / 6
             )
+        }
+    }
+}
+
+//@ExperimentalFoundationApi
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    SalonTheme {
+        Column() {
+            Banner()
         }
     }
 }
