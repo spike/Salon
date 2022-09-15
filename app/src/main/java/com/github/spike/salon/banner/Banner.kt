@@ -16,6 +16,7 @@ import com.github.spike.salon.R
 import com.github.spike.salon.ui.theme.SalonTheme
 
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Banner() {
     Card(
@@ -27,6 +28,9 @@ fun Banner() {
                 bottom = 24.dp
             )
             .width(IntrinsicSize.Max),
+        onClick = {
+
+        },
         elevation = 2.dp,
         shape = RoundedCornerShape(16.dp),
         backgroundColor = Color(0xFFCBF5D7)
