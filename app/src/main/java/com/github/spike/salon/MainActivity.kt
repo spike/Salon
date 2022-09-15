@@ -163,6 +163,32 @@ fun DefaultPreview() {
 @ExperimentalFoundationApi
 @Composable
 fun HomeScreen() {
+    val lst = listOf(
+        ServiceAvailable (
+            label = "Check-in",
+            R.drawable.ic_drop_in
+        ),
+        ServiceAvailable (
+            label = "Haircut",
+            R.drawable.ic_appointment
+        ),
+        ServiceAvailable (
+            label = "Haircut + Shampoo",
+            R.drawable.ic_drop_in
+        ),
+        ServiceAvailable (
+            label = "Haircut Jr.",
+            R.drawable.ic_drop_in
+        ),
+        ServiceAvailable (
+            label = "Coloring",
+            R.drawable.ic_drop_in
+        ),
+        ServiceAvailable (
+            label = "Book a Spot",
+            R.drawable.ic_drop_in
+        )
+    )
     Box(
         modifier = Modifier
             .fillMaxHeight()
@@ -171,32 +197,7 @@ fun HomeScreen() {
     ) {
         Column {
             ServicesSection(
-                servicesList = listOf(
-                    ServiceAvailable (
-                        label = "Check-in",
-                        R.drawable.ic_drop_in
-                    ),
-                    ServiceAvailable (
-                        label = "Haircut",
-                        R.drawable.ic_appointment
-                    ),
-                    ServiceAvailable (
-                        label = "Haircut + Shampoo",
-                        R.drawable.ic_drop_in
-                    ),
-                    ServiceAvailable (
-                        label = "Haircut Jr.",
-                        R.drawable.ic_drop_in
-                    ),
-                    ServiceAvailable (
-                        label = "Coloring",
-                        R.drawable.ic_drop_in
-                    ),
-                    ServiceAvailable (
-                        label = "Book a Spot",
-                        R.drawable.ic_drop_in
-                    )
-                )
+                servicesList = lst
             )
         }
     }
