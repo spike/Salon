@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.spike.salon.R
@@ -24,8 +25,8 @@ fun Banner() {
             .padding(
                 start = 32.dp,
                 end = 24.dp,
-                top = 24.dp,
-                bottom = 24.dp
+                top = 16.dp,
+                bottom = 16.dp
             )
             .width(IntrinsicSize.Max),
         onClick = {
@@ -37,14 +38,15 @@ fun Banner() {
 
     ) {
         Text(
-            text = "Accumulate 20 points and get a free visit.",
+            text = "Accumulate 20 points and get a free visit",
             modifier = Modifier.padding(
                 start = 32.dp,
                 end = 32.dp,
                 top = 24.dp,
                 bottom = 24.dp
             ),
-            style = MaterialTheme.typography.h6
+            style = MaterialTheme.typography.h6,
+            fontWeight = FontWeight.SemiBold
         )
         Canvas(modifier = Modifier.fillMaxSize(.1f)) {
             val canvasWidth = size.width

@@ -30,6 +30,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import com.github.spike.salon.banner.Banner
 import com.github.spike.salon.bottomnavigation.BottomNavigationBar
+import com.github.spike.salon.hairdressers.HairDressers
 import com.github.spike.salon.salonservices.Cell
 import com.github.spike.salon.salonservices.ServicesSection
 
@@ -58,95 +59,8 @@ class MainActivity : ComponentActivity() {
 fun Content() {
     Column {
         Banner()
-        Row(
-            modifier = Modifier.padding(
-                start=24.dp,
-                end=32.dp
-            )
-        ) {
-            Text(
-                text = "Our Hairdressers",
-                style = MaterialTheme.typography.h6,
-                fontWeight = FontWeight.Bold
-            )
-            Spacer(
-                modifier = Modifier
-                    .width(IntrinsicSize.Max)
-                    .weight(1f)
-            )
-            Card(
-                modifier = Modifier.size(32.dp),
-                shape = CircleShape,
-                elevation = 0.dp,
-            ) {
-                Image(
-                    painterResource(R.drawable.ic_right_arrow),
-                    contentDescription = "",
-                )
-            }
-        }
-        LazyRow(
-            contentPadding = PaddingValues(4.dp),
-            horizontalArrangement = Arrangement.spacedBy(4.dp),
-            modifier = Modifier.padding(start= 8.dp)
-        ) {
-            items(4) { currentCount ->
-                RowItem(number = currentCount)
-            }
-        }
-        Row(
-            modifier = Modifier.padding(
-                start=24.dp,
-                end=32.dp
-            )
-        ) {
-            Text(text="Services",
-                style= MaterialTheme.typography.h6,
-                fontWeight = FontWeight.Bold
-            )
-            Spacer(
-                modifier = Modifier
-                    .width(IntrinsicSize.Max)
-                    .weight(1f)
-            )
-            Card(
-                modifier = Modifier.size(32.dp),
-                shape = CircleShape,
-                elevation = 0.dp,
-            ) {
-                Image(
-                    painterResource(R.drawable.ic_right_arrow),
-                    contentDescription = "",
-                )
-            }
-        }
+        HairDressers()
         HomeScreen()
-    }
-}
-
-@Composable
-fun RowItem(number: Int) {
-    val avatars = arrayOf(
-        R.drawable.generated_woman_face2,
-        R.drawable.generated_woman_face,
-        R.drawable.generated_man_face,
-        R.drawable.generated_woman_face3,
-    )
-    Row(
-        modifier = Modifier.size(80.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Center
-    ) {
-        Card(
-            modifier = Modifier.size(54.dp),
-            shape = CircleShape,
-            elevation = 2.dp,
-            ) {
-            Image(
-                painterResource(avatars[number]),
-                contentDescription = "",
-            )
-        }
     }
 }
 
@@ -193,7 +107,7 @@ fun HomeScreen() {
         modifier = Modifier
             .fillMaxHeight()
             .fillMaxWidth()
-            .padding(bottom=20.dp)
+            .padding(bottom=16.dp)
     ) {
         Column {
             ServicesSection(
