@@ -17,61 +17,43 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.spike.salon.R
 import com.github.spike.salon.ServiceAvailable
-import com.github.spike.salon.ui.theme.SalonTheme
 
 @ExperimentalFoundationApi
 @Composable
-fun ServicesSection(servicesList: List<ServiceAvailable>) {
-    Column() {
-        Row(
-            modifier = Modifier.padding(
-                start = 24.dp,
-                end = 32.dp
-            )
+fun ServicesSection() {
+    Row(
+        modifier = Modifier.padding(
+            start = 24.dp,
+            end = 32.dp
+        )
+    ) {
+        Text(
+            text = "Services",
+            style = MaterialTheme.typography.h6,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(
+            modifier = Modifier
+                .width(IntrinsicSize.Max)
+                .weight(1f)
+        )
+        Card(
+            modifier = Modifier.size(24.dp),
+            shape = CircleShape,
+            elevation = 0.dp,
         ) {
-            Text(
-                text = "Services",
-                style = MaterialTheme.typography.h6,
-                fontWeight = FontWeight.Bold
+            Image(
+                painterResource(R.drawable.ic_right_arrow),
+                contentDescription = "",
             )
-            Spacer(
-                modifier = Modifier
-                    .width(IntrinsicSize.Max)
-                    .weight(1f)
-            )
-            Card(
-                modifier = Modifier.size(24.dp),
-                shape = CircleShape,
-                elevation = 0.dp,
-            ) {
-                Image(
-                    painterResource(R.drawable.ic_right_arrow),
-                    contentDescription = "",
-                )
-            }
-        }
-        LazyVerticalGrid(
-            cells = GridCells.Adaptive(150.dp),
-            // cells = GridCells.Fixed(2),
-            contentPadding = PaddingValues(
-                start = 8.dp,
-                end = 8.dp,
-                bottom = 32.dp
-            ),
-        ) {
-            items(servicesList.size) {
-                Cell(serviceListed = servicesList[it])
-            }
         }
     }
 }
 
-
 @ExperimentalFoundationApi
-@Preview(showBackground = true)
 @Composable
-fun ServicesSectionPreview() {
-    val lst = listOf(
+fun ServicesList() {
+    val servicesList = listOf(
         ServiceAvailable (
             label = "Check-in",
             R.drawable.ic_drop_in
@@ -97,8 +79,41 @@ fun ServicesSectionPreview() {
             R.drawable.ic_drop_in
         )
     )
-    SalonTheme {
-        ServicesSection(servicesList = lst)
+    LazyVerticalGrid(
+        cells = GridCells.Adaptive(150.dp),
+        // cells = GridCells.Fixed(2),
+        contentPadding = PaddingValues(
+            start = 8.dp,
+            end = 8.dp,
+            bottom = 32.dp
+        ),
+    ) {
+        items(servicesList.size) {
+            Cell(serviceListed = servicesList[it])
+        }
     }
+}
+
+@ExperimentalFoundationApi
+@Composable
+fun ServicesSectionFrame() {
+    Box(
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth()
+            .padding(bottom=16.dp)
+    ) {
+        Column {
+            ServicesSection()
+            ServicesList()
+        }
+    }
+}
+
+@ExperimentalFoundationApi
+@Preview(showBackground = true)
+@Composable
+fun ServicesSectionPreview() {
+    ServicesSectionFrame()
 }
 
