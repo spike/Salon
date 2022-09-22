@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -18,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.github.spike.salon.R
 import com.github.spike.salon.ServiceAvailable
 
+@OptIn(ExperimentalMaterialApi::class)
 @ExperimentalFoundationApi
 @Composable
 fun ServicesSection() {
@@ -41,6 +43,9 @@ fun ServicesSection() {
             modifier = Modifier.size(24.dp),
             shape = CircleShape,
             elevation = 0.dp,
+            onClick = {
+
+            }
         ) {
             Image(
                 painterResource(R.drawable.ic_right_arrow),
