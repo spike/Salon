@@ -24,7 +24,7 @@ fun HairDressers() {
     Row(
         modifier = Modifier.padding(
             start=24.dp,
-            end=90.dp
+            end=32.dp
         )
     ) {
         Text(
