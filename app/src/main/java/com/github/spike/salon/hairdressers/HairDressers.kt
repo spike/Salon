@@ -24,7 +24,7 @@ fun HairDressers() {
     Row(
         modifier = Modifier.padding(
             start=24.dp,
-            end=32.dp
+            end=90.dp
         )
     ) {
         Text(
@@ -73,12 +73,12 @@ fun RowItem(number: Int) {
         R.drawable.generated_woman_face3,
     )
     Row(
-        modifier = Modifier.size(80.dp),
+        modifier = Modifier.size(68.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
         Card(
-            modifier = Modifier.size(36.dp),
+            modifier = Modifier.size(40.dp),
             shape = CircleShape,
             elevation = 2.dp,
             onClick = {
