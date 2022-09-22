@@ -85,7 +85,7 @@ fun ServicesList() {
         contentPadding = PaddingValues(
             start = 8.dp,
             end = 8.dp,
-            bottom = 32.dp
+            bottom = 40.dp
         ),
     ) {
         items(servicesList.size) {

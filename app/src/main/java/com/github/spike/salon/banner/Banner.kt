@@ -2,11 +2,14 @@ package com.github.spike.salon.banner
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -27,8 +30,7 @@ fun Banner() {
                 end = 24.dp,
                 top = 16.dp,
                 bottom = 16.dp
-            )
-            .width(IntrinsicSize.Max),
+            ),
         onClick = {
 
         },
@@ -37,31 +39,48 @@ fun Banner() {
         backgroundColor = Color(0xFFCBF5D7)
 
     ) {
-        Text(
-            text = "Accumulate 20 points and get a free visit",
-            modifier = Modifier.padding(
-                start = 32.dp,
-                end = 32.dp,
-                top = 24.dp,
-                bottom = 24.dp
-            ),
-            style = MaterialTheme.typography.h6,
-            fontWeight = FontWeight.SemiBold
-        )
-        Canvas(modifier = Modifier.fillMaxSize(.1f)) {
-            val canvasWidth = size.width
-            val canvasHeight = size.height
-            drawCircle(
-                color = Color.DarkGray,
-                center = Offset(x = canvasWidth - 120, y = canvasHeight -18),
-                radius = size.minDimension / 6
-            )
-            drawCircle(
-                color = Color.White,
-                center = Offset(x = canvasWidth - 120, y = canvasHeight -18),
-                radius = size.minDimension / 6
-            )
+        Column(
+            modifier = Modifier.padding(8.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.End,
+        ) {
+                Text(
+                    text = "Accumulate 20 points and get a free visit",
+                    modifier = Modifier.padding(
+                        start = 32.dp,
+                        end = 32.dp,
+                        top = 8.dp,
+                    ),
+                    style = MaterialTheme.typography.h6,
+                    fontWeight = FontWeight.SemiBold
+                )
+
+            Card(
+                modifier = Modifier.padding(
+                    bottom=8.dp,
+                    end = 16.dp
+                )
+                    .size(28.dp),
+                shape = CircleShape,
+            ) {
+
+            }
+
         }
+    }
+}
+
+@Composable
+fun CallToActionArrow() {
+    Canvas(modifier = Modifier.width(80.dp)
+                        .height(40.dp)
+    ) {
+        val canvasWidth = size.width
+        val canvasHeight = size.height
+
+        // arrow
+        // line
+
     }
 }
 
