@@ -6,7 +6,7 @@ This layout was inspired by this Driiible [mockup](https://dribbble.com/shots/17
 
 ### Credit
 
-Credit goes to Taras Migulko for the [original design](https://dribbble.com/shots/17982313-Good-beard-mobile-app). If you like his design, please [give them](https://dribbble.com/shots/17982313-Good-beard-mobile-app) a "Like" on Dribbble.com. Or better still, consider hiring them the next time your team needs to outsource design work. 
+Credit goes to Taras Migulko for the [original design](https://dribbble.com/shots/17982313-Good-beard-mobile-app). If you like his design, please [give him](https://dribbble.com/shots/17982313-Good-beard-mobile-app) a "Like" on Dribbble.com. Or better still, consider hiring him the next time your team needs to outsource design work. 
 
 ### Details
 
