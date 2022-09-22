@@ -54,17 +54,21 @@ fun Banner() {
                     style = MaterialTheme.typography.h6,
                     fontWeight = FontWeight.SemiBold
                 )
+            Box () {
 
-            Card(
-                modifier = Modifier.padding(
-                    bottom=8.dp,
-                    end = 16.dp
-                )
-                    .size(28.dp),
-                shape = CircleShape,
-            ) {
+                Card(
+                    modifier = Modifier
+                        .width(30.dp)
+                        .height(30.dp)
+                        .align(alignment = Alignment.CenterEnd)
+                    ,
+                    shape = CircleShape,
+                ) {
 
+                }
+                CallToActionArrow()
             }
+
 
         }
     }
@@ -72,15 +76,20 @@ fun Banner() {
 
 @Composable
 fun CallToActionArrow() {
-    Canvas(modifier = Modifier.width(80.dp)
-                        .height(40.dp)
+    Canvas(modifier = Modifier
+        .width(90.dp)
+        .height(30.dp)
+
     ) {
         val canvasWidth = size.width
         val canvasHeight = size.height
 
-        // arrow
-        // line
-
+        drawLine(
+            start = Offset(x = canvasWidth-34f, y = canvasHeight/2),
+            end = Offset(x = 20f, y = canvasHeight/2),
+            color = Color.Black,
+            strokeWidth = 4f
+        )
     }
 }
 
