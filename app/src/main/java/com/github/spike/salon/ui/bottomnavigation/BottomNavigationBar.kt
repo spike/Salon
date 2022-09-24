@@ -1,4 +1,4 @@
-package com.github.spike.salon.bottomnavigation
+package com.github.spike.salon.ui.bottomnavigation
 
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
@@ -8,8 +8,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import com.github.spike.salon.NavigationItem
+import androidx.compose.ui.tooling.preview.Preview
 import com.github.spike.salon.R
+import com.github.spike.salon.ui.theme.SalonTheme
 
 @Composable
 fun BottomNavigationBar() {
@@ -44,3 +45,11 @@ fun BottomNavigationBar() {
         }
     }
 }
+@Preview(showBackground = true)
+@Composable
+fun BottomNavigationPreview() {
+    SalonTheme {
+        BottomNavigationBar()
+    }
+}
+

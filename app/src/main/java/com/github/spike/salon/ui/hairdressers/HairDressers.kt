@@ -1,4 +1,4 @@
-package com.github.spike.salon.hairdressers
+package com.github.spike.salon.ui.hairdressers
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*

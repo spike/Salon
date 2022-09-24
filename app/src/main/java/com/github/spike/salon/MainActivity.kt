@@ -9,10 +9,10 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.github.spike.salon.banner.Banner
-import com.github.spike.salon.bottomnavigation.BottomNavigationBar
-import com.github.spike.salon.hairdressers.HairDressers
-import com.github.spike.salon.salonservices.ServicesSectionFrame
+import com.github.spike.salon.ui.banner.Banner
+import com.github.spike.salon.ui.bottomnavigation.BottomNavigationBar
+import com.github.spike.salon.ui.hairdressers.HairDressers
+import com.github.spike.salon.ui.salonservices.ServicesSectionFrame
 
 import com.github.spike.salon.ui.theme.SalonTheme
 

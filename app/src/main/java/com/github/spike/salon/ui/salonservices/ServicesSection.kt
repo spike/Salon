@@ -1,4 +1,4 @@
-package com.github.spike.salon.salonservices
+package com.github.spike.salon.ui.salonservices
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
@@ -17,7 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.spike.salon.R
-import com.github.spike.salon.ServiceAvailable
+import com.github.spike.salon.ui.theme.SalonTheme
 
 @OptIn(ExperimentalMaterialApi::class)
 @ExperimentalFoundationApi
@@ -119,6 +119,8 @@ fun ServicesSectionFrame() {
 @Preview(showBackground = true)
 @Composable
 fun ServicesSectionPreview() {
-    ServicesSectionFrame()
+    SalonTheme {
+        ServicesSectionFrame()
+    }
 }
 

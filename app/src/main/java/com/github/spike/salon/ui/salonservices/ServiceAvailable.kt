@@ -1,7 +1,6 @@
-package com.github.spike.salon
+package com.github.spike.salon.ui.salonservices
 
 import androidx.annotation.DrawableRes
-import androidx.compose.ui.graphics.Color
 
 data class ServiceAvailable(
     val label: String,
