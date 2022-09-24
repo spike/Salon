@@ -26,7 +26,7 @@ fun Banner() {
     Card(
         modifier = Modifier
             .padding(
-                start = 32.dp,
+                start = 24.dp,
                 end = 24.dp,
                 top = 16.dp,
                 bottom = 16.dp

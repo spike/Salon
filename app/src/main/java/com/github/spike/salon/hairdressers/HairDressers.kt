@@ -54,7 +54,7 @@ fun HairDressers() {
     LazyRow(
         contentPadding = PaddingValues(0.dp),
         horizontalArrangement = Arrangement.spacedBy(0.dp),
-        modifier = Modifier.padding(start= 4.dp)
+        modifier = Modifier.padding(start= 8.dp)
     ) {
         items(4) { currentCount ->
             RowItem(number = currentCount)
