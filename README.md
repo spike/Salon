@@ -8,7 +8,7 @@ This layout was inspired by this Driiible [mockup](https://dribbble.com/shots/17
 
 This app is a clickable and a scrollable mockup made using [Jetpack Compose](https://developer.android.com/jetpack/compose). 
 
-It uses a lazy row for the avatars and it uses a fixed 2 column lazy column for the services.
+It uses a lazy row for the avatars and it uses a fixed 2 column lazy column for the salon services.
 
 ## Attributions
 
