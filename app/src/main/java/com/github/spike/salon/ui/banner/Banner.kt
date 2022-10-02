@@ -16,6 +16,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.github.spike.salon.ui.banner.Devices.NEXUS_5
+import com.github.spike.salon.ui.banner.Devices.NEXUS_5X
+import com.github.spike.salon.ui.banner.Devices.NEXUS_7
 import com.github.spike.salon.ui.banner.Devices.PIXEL
 import com.github.spike.salon.ui.banner.Devices.PIXEL_3_XL
 import com.github.spike.salon.ui.theme.SalonTheme
@@ -165,6 +167,15 @@ fun DefaultBannerPreviewOnPixel() {
 @Preview(showBackground = true, device = NEXUS_5)
 @Composable
 fun DefaultBannerPreviewOnNexus5() {
+    SalonTheme {
+        Column() {
+            Banner()
+        }
+    }
+}
+@Preview(showBackground = true, device = NEXUS_7)
+@Composable
+fun DefaultBannerPreviewOnNexus7() {
     SalonTheme {
         Column() {
             Banner()
