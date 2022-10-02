@@ -24,7 +24,6 @@ import com.github.spike.salon.ui.theme.SalonTheme
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Banner() {
-    val circleShape = RectangleShape
     Card(
         modifier = Modifier
             .padding(
@@ -33,9 +32,8 @@ fun Banner() {
                 top = 16.dp,
                 bottom = 16.dp
             )
-            .graphicsLayer { // call this function to apply custom shadow elevation, otherwise use `clip()`
-                //  shadowElevation = 45f //your custom shadow elevation in px
-                clip = true //make sure to set clip to true
+            .graphicsLayer {
+                clip = true
                 shape = RoundedCornerShape(16.dp)
             },
         onClick = {
