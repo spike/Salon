@@ -60,29 +60,29 @@ fun ServicesSection() {
 fun ServicesList() {
     val servicesList = listOf(
         ServiceAvailable (
-            label = "Check-in",
-            R.drawable.building
-        ),
-        ServiceAvailable (
             label = "Haircut",
             R.drawable.haircut_sitting
-        ),
-        ServiceAvailable (
-            label = "Haircut + Shampoo",
-            R.drawable.shampoo2
         ),
         ServiceAvailable (
             label = "Haircut Jr.",
             R.drawable.haircut_junior
         ),
         ServiceAvailable (
-            label = "Trim",
-            R.drawable.haircut_one_hair
+            label = "Shampoo",
+            R.drawable.shampoo2
         ),
         ServiceAvailable (
             label = "Shave",
             R.drawable.shaver_outline
-        )
+        ),
+        ServiceAvailable (
+            label = "Trim",
+            R.drawable.haircut_one_hair
+        ),
+        ServiceAvailable (
+            label = "Check-in",
+            R.drawable.building
+        ),
     )
     LazyVerticalGrid(
         cells = GridCells.Adaptive(150.dp),

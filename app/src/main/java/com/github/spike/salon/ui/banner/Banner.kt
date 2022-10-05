@@ -50,7 +50,7 @@ fun Banner() {
             horizontalAlignment = Alignment.End,
         ) {
             Text(
-                text = "Accumulate 20 points and\n get a free visit",
+                text = "Accumulate 20 points and get a free visit",
                 modifier = Modifier.padding(
                     start = 32.dp,
                     end = 32.dp,
@@ -73,17 +73,17 @@ fun Banner() {
 fun DrawWhiteCircles() {
     Canvas(
         modifier = Modifier
-            .size(size = 32.dp)
+            .size(size = 4.dp)
     ) {
         drawCircle(
             color = Color.White,
-            center = Offset(-110.dp.toPx(), 48.dp.toPx()),
+            center = Offset(-140.dp.toPx(), 48.dp.toPx()),
             radius = 40.dp.toPx(),
             style = Stroke(width = 2.dp.toPx()),
         )
         drawCircle(
             color = Color.White,
-            center = Offset(-90.dp.toPx(), 52.dp.toPx()),
+            center = Offset(-120.dp.toPx(), 52.dp.toPx()),
             radius = 36.dp.toPx(),
             style = Stroke(width = 2.dp.toPx()),
         )
