@@ -73,18 +73,18 @@ fun Banner() {
 fun DrawWhiteCircles() {
     Canvas(
         modifier = Modifier
-            .size(size = 40.dp)
+            .size(size = 32.dp)
     ) {
         drawCircle(
             color = Color.White,
-            center = Offset(30.dp.toPx(), 180f),
-            radius = 46.dp.toPx(),
+            center = Offset(-110.dp.toPx(), 48.dp.toPx()),
+            radius = 40.dp.toPx(),
             style = Stroke(width = 2.dp.toPx()),
         )
         drawCircle(
             color = Color.White,
-            center = Offset(0.dp.toPx(), 180.dp.toPx()),
-            radius = 42.dp.toPx(),
+            center = Offset(-90.dp.toPx(), 52.dp.toPx()),
+            radius = 36.dp.toPx(),
             style = Stroke(width = 2.dp.toPx()),
         )
     }
