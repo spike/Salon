@@ -2,7 +2,7 @@
 
 This layout was inspired by this Driiible [mockup](https://dribbble.com/shots/17982313-Good-beard-mobile-app) 
 
-<img src="https://github.com/spike/spike/blob/main/screenshot_salon.png" width="230"  title="Salon App"/>
+<img src="https://github.com/spike/spike/blob/main/salon_app.png" width="230"  title="Salon App"/>
 
 ## Details
 
