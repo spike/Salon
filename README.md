@@ -1,6 +1,6 @@
 # Hair Salon App
 
-This layout was inspired by this Driiible [mockup](https://dribbble.com/shots/17982313-Good-beard-mobile-app) 
+This layout was inspired by this Dribbble [mockup](https://dribbble.com/shots/17982313-Good-beard-mobile-app) 
 
 <img src="https://github.com/spike/spike/blob/main/salon_app.png" width="230"  title="Salon App"/>
 
