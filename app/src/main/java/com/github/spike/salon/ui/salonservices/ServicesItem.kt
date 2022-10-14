@@ -17,11 +17,12 @@ import com.github.spike.salon.ui.theme.SalonTheme
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun Cell(
-    serviceListed: ServiceAvailable
+    serviceListed: ServiceAvailable,
+    modifier: Modifier
 ) {
     Surface() {
         Card(
-            modifier = Modifier.padding(10.dp)
+            modifier = modifier.padding(10.dp)
                 .width(IntrinsicSize.Max),
          //   backgroundColor = Color(0xFF808080),
             shape = RoundedCornerShape(8.dp),
@@ -31,12 +32,12 @@ fun Cell(
             }
         ) {
             Column(
-                modifier = Modifier.padding(8.dp),
+                modifier = modifier.padding(8.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                 Card(
-                    modifier = Modifier.padding(8.dp)
+                    modifier = modifier.padding(8.dp)
                         .size(80.dp),
                     shape = CircleShape,
                 ) {
@@ -62,6 +63,8 @@ fun DefaultServicesItemPreview() {
         R.drawable.ic_drop_in
     )
     SalonTheme {
-        Cell(serviceListed = serviceAvailable)
+        Cell(serviceListed = serviceAvailable,
+        Modifier
+            )
     }
 }

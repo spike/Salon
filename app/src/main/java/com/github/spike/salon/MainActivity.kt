@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                  //   color = MaterialTheme.colors.background
                 ) {
-                    ScaffoldLayout()
+                    ScaffoldLayout(Modifier)
                 }
             }
         }
@@ -36,11 +36,11 @@ class MainActivity : ComponentActivity() {
 
 @ExperimentalFoundationApi
 @Composable
-fun Content() {
+fun Content(modifier: Modifier) {
     Column {
-        Banner()
-        HairDressers()
-        ServicesSectionFrame()
+        Banner(modifier)
+        HairDressers(modifier)
+        ServicesSectionFrame(modifier)
     }
 }
 
@@ -49,22 +49,22 @@ fun Content() {
 @Composable
 fun DefaultPreview() {
     SalonTheme {
-        ScaffoldLayout()
+        ScaffoldLayout(Modifier)
     }
 }
 
 
 @ExperimentalFoundationApi
 @Composable
-fun ScaffoldLayout() {
+fun ScaffoldLayout(modifier: Modifier) {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Open))
     Scaffold(
         scaffoldState = scaffoldState,
         content = { padding ->
-            Content()
+            Content(modifier)
         },
         bottomBar = {
-            BottomNavigationBar()
+            BottomNavigationBar(modifier)
          }
     )
 }

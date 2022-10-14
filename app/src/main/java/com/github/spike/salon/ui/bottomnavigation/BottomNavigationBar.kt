@@ -5,6 +5,7 @@ import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -13,7 +14,7 @@ import com.github.spike.salon.R
 import com.github.spike.salon.ui.theme.SalonTheme
 
 @Composable
-fun BottomNavigationBar() {
+fun BottomNavigationBar(modifier: Modifier) {
     val items = listOf(
         NavigationItem.Home,
         NavigationItem.Bookmarks,
@@ -49,7 +50,7 @@ fun BottomNavigationBar() {
 @Composable
 fun BottomNavigationPreview() {
     SalonTheme {
-        BottomNavigationBar()
+        BottomNavigationBar(Modifier)
     }
 }
 

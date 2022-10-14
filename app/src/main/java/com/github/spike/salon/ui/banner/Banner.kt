@@ -24,9 +24,9 @@ import com.github.spike.salon.ui.theme.SalonTheme
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun Banner() {
+fun Banner(modifier: Modifier) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .padding(
                 start = 24.dp,
                 end = 24.dp,
@@ -45,13 +45,13 @@ fun Banner() {
         backgroundColor = Color(0xFFCBF5D7)
     ) {
         Column(
-            modifier = Modifier.padding(8.dp),
+            modifier = modifier.padding(8.dp),
            // verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.End,
         ) {
             Text(
                 text = "Accumulate 20 points and get a free visit",
-                modifier = Modifier.padding(
+                modifier = modifier.padding(
                     start = 32.dp,
                     end = 32.dp,
                     top = 8.dp,
@@ -60,19 +60,19 @@ fun Banner() {
                 fontWeight = FontWeight.SemiBold
             )
             Row(
-                modifier = Modifier,
+                modifier = modifier,
             ) {
-                DrawWhiteCircles()
-                DrawCircleArrow(Modifier)
+                DrawWhiteCircles(modifier)
+                DrawCircleArrow(modifier)
             }
         }
     }
 }
 
 @Composable
-fun DrawWhiteCircles() {
+fun DrawWhiteCircles(modifier: Modifier) {
     Canvas(
-        modifier = Modifier
+        modifier = modifier
             .size(size = 4.dp)
     ) {
         drawCircle(
@@ -95,7 +95,7 @@ fun DrawWhiteCircles() {
 fun DefaultBannerPreview() {
     SalonTheme {
         Column() {
-            Banner()
+            Banner(Modifier)
         }
     }
 }
@@ -104,7 +104,7 @@ fun DefaultBannerPreview() {
 fun DefaultBannerPreviewOnPixelXL() {
     SalonTheme {
         Column() {
-            Banner()
+            Banner(Modifier)
         }
     }
 }
@@ -113,7 +113,7 @@ fun DefaultBannerPreviewOnPixelXL() {
 fun DefaultBannerPreviewOnPixel() {
     SalonTheme {
         Column() {
-            Banner()
+            Banner(Modifier)
         }
     }
 }
@@ -122,7 +122,7 @@ fun DefaultBannerPreviewOnPixel() {
 fun DefaultBannerPreviewOnNexus5() {
     SalonTheme {
         Column() {
-            Banner()
+            Banner(Modifier)
         }
     }
 }
@@ -131,7 +131,7 @@ fun DefaultBannerPreviewOnNexus5() {
 fun DefaultBannerPreviewOnNexus7() {
     SalonTheme {
         Column() {
-            Banner()
+            Banner(Modifier)
         }
     }
 }

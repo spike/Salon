@@ -20,9 +20,9 @@ import com.github.spike.salon.ui.theme.SalonTheme
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun HairDressers() {
+fun HairDressers(modifier: Modifier) {
     Row(
-        modifier = Modifier.padding(
+        modifier = modifier.padding(
             start=24.dp,
             end=32.dp
         )
@@ -33,12 +33,12 @@ fun HairDressers() {
             fontWeight = FontWeight.SemiBold
         )
         Spacer(
-            modifier = Modifier
+            modifier = modifier
                 .width(IntrinsicSize.Max)
                 .weight(1f)
         )
         Card(
-            modifier = Modifier.size(24.dp),
+            modifier = modifier.size(24.dp),
             shape = CircleShape,
             elevation = 0.dp,
             onClick = {
@@ -54,10 +54,10 @@ fun HairDressers() {
     LazyRow(
         contentPadding = PaddingValues(0.dp),
         horizontalArrangement = Arrangement.spacedBy(0.dp),
-        modifier = Modifier.padding(start= 8.dp)
+        modifier = modifier.padding(start= 8.dp)
     ) {
         items(4) { currentCount ->
-            RowItem(number = currentCount)
+            RowItem(number = currentCount, modifier)
         }
     }
 
@@ -65,7 +65,7 @@ fun HairDressers() {
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun RowItem(number: Int) {
+fun RowItem(number: Int, modifier: Modifier) {
     val avatars = arrayOf(
         R.drawable.generated_woman_face2,
         R.drawable.generated_woman_face,
@@ -73,12 +73,12 @@ fun RowItem(number: Int) {
         R.drawable.generated_woman_face3,
     )
     Row(
-        modifier = Modifier.size(68.dp),
+        modifier = modifier.size(68.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
         Card(
-            modifier = Modifier.size(40.dp),
+            modifier = modifier.size(40.dp),
             shape = CircleShape,
             elevation = 2.dp,
             onClick = {
@@ -96,7 +96,7 @@ fun RowItem(number: Int) {
 @Composable
 fun HairDressersPreview() {
     SalonTheme {
-        HairDressers()
+        HairDressers(Modifier)
     }
 }
 

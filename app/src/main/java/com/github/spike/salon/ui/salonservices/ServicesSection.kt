@@ -22,7 +22,7 @@ import com.github.spike.salon.ui.theme.SalonTheme
 @OptIn(ExperimentalMaterialApi::class)
 @ExperimentalFoundationApi
 @Composable
-fun ServicesSection() {
+fun ServicesSection(modifier: Modifier) {
     Row(
         modifier = Modifier.padding(
             start = 24.dp,
@@ -35,12 +35,12 @@ fun ServicesSection() {
             fontWeight = FontWeight.Bold
         )
         Spacer(
-            modifier = Modifier
+            modifier = modifier
                 .width(IntrinsicSize.Max)
                 .weight(1f)
         )
         Card(
-            modifier = Modifier.size(24.dp),
+            modifier = modifier.size(24.dp),
             shape = CircleShape,
             elevation = 0.dp,
             onClick = {
@@ -57,7 +57,7 @@ fun ServicesSection() {
 
 @ExperimentalFoundationApi
 @Composable
-fun ServicesList() {
+fun ServicesList(modifier: Modifier) {
     val servicesList = listOf(
         ServiceAvailable (
             label = "Haircut",
@@ -94,23 +94,23 @@ fun ServicesList() {
         ),
     ) {
         items(servicesList.size) {
-            Cell(serviceListed = servicesList[it])
+            Cell(serviceListed = servicesList[it], modifier)
         }
     }
 }
 
 @ExperimentalFoundationApi
 @Composable
-fun ServicesSectionFrame() {
+fun ServicesSectionFrame(modifier: Modifier) {
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxHeight()
             .fillMaxWidth()
             .padding(bottom=16.dp)
     ) {
         Column {
-            ServicesSection()
-            ServicesList()
+            ServicesSection(modifier)
+            ServicesList(modifier)
         }
     }
 }
@@ -120,7 +120,7 @@ fun ServicesSectionFrame() {
 @Composable
 fun ServicesSectionPreview() {
     SalonTheme {
-        ServicesSectionFrame()
+        ServicesSectionFrame(Modifier)
     }
 }
 
